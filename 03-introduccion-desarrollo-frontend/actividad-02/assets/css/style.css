@@ -1,0 +1,107 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 48px;
+    text-transform: uppercase;
+}
+
+#main-nav {
+
+}
+
+#logo > img {
+    border-radius: 16px;
+    border: black 1px solid;
+}
+
+#card-container {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 768px) {
+    #card-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/*
+
+Se que otras formas de hacer esto pero decidí gestionarlo unicamente con CSS para mostrar algo distinto
+
+*/
+#card-container > a {
+    background-size: cover;
+    border-radius: 16px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 32px;
+}
+
+#card-container > a::after {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+}
+
+#card-container > a::before {
+    content: '¡Crea tu meme!';
+    display: flex;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(11, 110, 253, 0.95);
+    opacity: 0;
+    transition: opacity 400ms ease;
+}
+
+#card-container > a:hover::before {
+    opacity: 1;
+}
+
+#card-container > a:nth-child(1) {
+    background-image: url("https://cdn.memegenerator.es/imagenes/memes/full/0/0/3819.jpg");
+}
+
+#card-container > a:nth-child(1)::before {
+    content: 'Bad Luck Brian';
+}
+
+#card-container > a:nth-child(2) {
+    background-image: url("https://cdn.memegenerator.es/imagenes/memes/full/32/46/32464392.jpg");
+}
+
+#card-container > a:nth-child(2)::before {
+    content: 'Crying Peter Parker';
+}
+
+#card-container > a:nth-child(3) {
+    background-image: url("https://cdn.memegenerator.es/imagenes/memes/full/0/0/4.jpg");
+}
+
+#card-container > a:nth-child(3)::before {
+    content: 'Friki';
+}
+
+#card-container > a:nth-child(4) {
+    background-image: url("https://cdn.memegenerator.es/imagenes/memes/full/0/0/1.jpg");
+}
+
+#card-container > a:nth-child(4)::before {
+    content: 'Sergio Ramos';
+}
