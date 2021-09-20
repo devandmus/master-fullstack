@@ -1,0 +1,42 @@
+[
+  {
+    "img": "./img/img1.jpg",
+    "time": "3 min ago",
+    "user": "@kikoloureiro",
+    "likes": 5228,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "comments": 21
+  },
+  {
+    "img": "./img/img2.jpg",
+    "time": "7 min ago",
+    "user": "@johnpetrucci",
+    "likes": 7221,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ad minim veniam.",
+    "comments": 48
+  },
+  {
+    "img": "./img/img3.jpg",
+    "time": "1 hour ago",
+    "user": "@stevevay",
+    "likes": 4830,
+    "description": "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    "comments": 32
+  },
+  {
+    "img": "./img/img4.jpg",
+    "time": "2 hours ago",
+    "user": "@santana",
+    "likes": 930,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+    "comments": 16
+  },
+  {
+    "img": "./img/img5.jpg",
+    "time": "6 hours ago",
+    "user": "@joesatriani",
+    "likes": 834,
+    "description": "Lorem ipsum dolor sit amet ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    "comments": 9
+  }
+]
