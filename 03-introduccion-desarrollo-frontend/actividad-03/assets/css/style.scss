@@ -1,0 +1,100 @@
+body, html {
+    height: 100%;
+    font-family: "Montserrat", sans-serif;
+}
+
+body{
+  background-color: #212121;
+}
+
+h1{
+    font-weight: 600;
+    margin: 30px 0 20px;
+    color: #fff;
+}
+
+main.container-fluid, header.container-fluid{
+    width: 80%;
+}
+
+form{
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    margin: 0 auto 50px auto!important;
+    > div{
+        margin-bottom: 10px;
+    }
+    input, textarea{
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid #e0e0e0;
+        padding: 8px;
+        outline: none;
+        box-sizing: border-box;
+        background-color: transparent;
+        color: #fff;
+    }
+    button.btn{
+        width: 100%;
+        transition: all .2s linear;
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 10px 0;
+        color: #fff;
+        &:hover{
+            opacity: .7;
+        }
+    }
+}
+
+section{
+    display: flex;
+    justify-content: space-around;
+    .card{
+        text-align: center;
+        img{
+            max-width: 100px;
+            display: block;
+            margin: 10px auto;
+        }
+        a{
+            width: 100%;
+        }
+    }
+}
+
+div.card-body {
+    display: flex;
+    flex-direction: column;
+    a {
+        margin-top: auto;
+    }
+}
+
+section.gridtainer {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr;
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+}
+
+aside.message {
+    &.success,
+    &.danger {
+        padding: 16px;
+        margin: auto;
+        width: 100%;
+        border-radius: 8px;
+        color: white;
+        text-align: center;
+    }
+    &.success {
+        background-color: darkgreen;
+    }
+    &.danger {
+        background-color: orangered;
+    }
+}

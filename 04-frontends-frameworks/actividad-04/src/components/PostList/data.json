@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "img": "./img/img1.jpg",
+    "time": "2021-09-26T13:20:00",
+    "user": "@kikoloureiro",
+    "likes": 5228,
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "comments": 21
+  },
+  {
+    "id": 2,
+    "img": "./img/img2.jpg",
+    "time": "2021-09-27T13:20:00",
+    "user": "@johnpetrucci",
+    "likes": 7221,
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit ad minim veniam.",
+    "comments": 48
+  },
+  {
+    "id": 3,
+    "img": "./img/img3.jpg",
+    "time": "2021-09-27T20:20:00",
+    "user": "@stevevay",
+    "likes": 4830,
+    "text": "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    "comments": 32
+  },
+  {
+    "id": 4,
+    "img": "./img/img4.jpg",
+    "time": "2021-09-28T11:20:00",
+    "user": "@santana",
+    "likes": 930,
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+    "comments": 16
+  },
+  {
+    "id": 5,
+    "img": "./img/img5.jpg",
+    "time": "2021-09-28T15:20:00",
+    "user": "@joesatriani",
+    "likes": 834,
+    "text": "Lorem ipsum dolor sit amet ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    "comments": 9
+  }
+]
