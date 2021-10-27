@@ -2,7 +2,7 @@ import React  from 'react';
 import { BsPeopleCircle, BsFillLightningFill } from 'react-icons/bs';
 import PropTypes from 'prop-types';
 
-const NavBar = ({ onLogoClick, onProfileClick }) => {
+const NavBar = ({ onLogoClick, onProfileClick, loginOk }) => {
   return (
     <nav className="navbar navbar-light bg-light">
       <div className="container">
@@ -10,7 +10,7 @@ const NavBar = ({ onLogoClick, onProfileClick }) => {
           <BsFillLightningFill />
           <div className="ps-2">three pics</div>
         </div>
-        <BsPeopleCircle onClick={onProfileClick} role="button" />
+        {loginOk && <BsPeopleCircle onClick={onProfileClick} role="button" />}
       </div>
     </nav>
   );
@@ -19,6 +19,7 @@ const NavBar = ({ onLogoClick, onProfileClick }) => {
 NavBar.propTypes = {
   onLogoClick: PropTypes.func.isRequired,
   onProfileClick: PropTypes.func.isRequired,
+  loginOk: PropTypes.bool.isRequired,
 }
 
 export default NavBar;

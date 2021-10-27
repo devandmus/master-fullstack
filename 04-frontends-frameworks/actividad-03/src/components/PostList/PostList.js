@@ -3,7 +3,8 @@ import Post from '../Post';
 import PropTypes from 'prop-types';
 import PostListStyled from './styles/PostListStyled';
 
-const PostList = ({ posts }) => {
+// incorporo search basado en sugerencia de la actividad anterior
+const PostList = ({ posts, search }) => {
   const [ loading, setLoading ] = useState(true);
 
   useEffect(() => {
@@ -18,12 +19,16 @@ const PostList = ({ posts }) => {
 
   useEffect(() => {
     setLoading(true);
-  }, [posts])
+  }, [posts]);
 
   return (
     <PostListStyled>
       {loading ? <h3>Loading...</h3> : (
         posts
+          .filter(post => post.text
+            .toLowerCase()
+            .includes(search.toLowerCase())
+          )
           .map(post => (
             <Post
               key={post.id}

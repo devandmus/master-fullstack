@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ProfileStyled from './styles/ProfileStyled';
+import { logout } from '../../helpers/Users';
 
 const Profile = ({
   avatar,
@@ -14,6 +15,7 @@ const Profile = ({
       </figure>
       <h3>{username}</h3>
       <p>{bio}</p>
+      <button onClick={logout} className="btn btn-primary">Logout</button>
     </ProfileStyled>
   );
 };
