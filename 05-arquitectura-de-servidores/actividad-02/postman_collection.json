@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "eeae5a21-38b9-45cb-b748-1098cdb7e79c",
+		"name": "Arquitectura - Actividad 02",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CREATE (valid data)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const { identifier } = pm.response.json()",
+							"",
+							"pm.collectionVariables.set('validRequestId', identifier);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"title\": \"Ipsum\",\n     \"text\": \"Lorem super\",\n     \"author\": \"Andrew\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}/posts",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE (error)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"title\": \"Ipsu\",\n     \"text\": \"Lore\",\n     \"author\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}/posts",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET LIST",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const list = pm.response.json();",
+							"",
+							"// get valid detail",
+							"if(list.length > 0)",
+							"    pm.collectionVariables.set('validRequestId', list[0].identifier);",
+							"",
+							"else pm.collectionVariables.set('validRequestId', 'ERROR__EMPTY_DB_LIST__PLEASE_CREATE_ONE')"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api}}/posts",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET DETAIL",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api}}/posts/{{validRequestId}}",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"posts",
+						"{{validRequestId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET DETAIL (error)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{api}}/posts/ñ",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"posts",
+						"ñ"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"New title\",\n    \"text\": \"New text\",\n    \"author\": \"Andrew's\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}/posts/{{validRequestId}}",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"posts",
+						"{{validRequestId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET DETAIL Copy",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{api}}/posts/{{validRequestId}}",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"posts",
+						"{{validRequestId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api",
+			"value": "http://localhost:8000/api"
+		},
+		{
+			"key": "validRequestId",
+			"value": ""
+		}
+	]
+}
