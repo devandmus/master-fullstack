@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "323ccc06-867b-4a25-b8d1-fb0691794e37",
+		"name": "Arquitectura - Actividad 04",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CREATE USER",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const { identifier } = pm.response.json()",
+							"",
+							"pm.collectionVariables.set('validRequestId', identifier);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"name\": \"Andrés Maldonado\",\n     \"email\": \"andres.maldonado@wom.cl\",\n     \"password\": \"12341234\",\n     \"bio\": \"Lorem ipsum dolor sit amen\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}/users",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"andres.maldonado@wom.cl\",\n    \"password\": \"12341234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}/login",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Título",
+							"type": "text"
+						},
+						{
+							"key": "text",
+							"value": "Texto del cuerpo",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "Andrés",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/andresmaldonado/Desktop/avatar.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api}}/posts",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGGOUT (204/401)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api}}/loggout",
+					"host": [
+						"{{api}}"
+					],
+					"path": [
+						"loggout"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api",
+			"value": "http://localhost:8000/api"
+		},
+		{
+			"key": "validRequestId",
+			"value": ""
+		}
+	]
+}
