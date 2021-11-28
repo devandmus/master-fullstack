@@ -1,0 +1,41 @@
+{
+    "app": {
+        "title": "Welcome to my Portfolio Webpage"
+    },
+    "landing": {
+        "title": "Welcome to the Family"
+    },
+    "loader" : {
+        "text": "loading..."
+    },
+    "login": {
+        "err_usr_pass": "Username and password must not be null",
+        "err_inv_lgn": "Invalid login",
+        "email_placeholder": "email",
+        "password_placeholder": "password",
+        "button_login": "Log in",
+        "login_title": "Login Panel"
+    },
+    "project": {
+        "project_title": "Project Input",
+        "title_placeholder": "Title",
+        "description_placeholder": "Description",
+        "tags_placeholder": "Tags",
+        "version_placeholder": "Version",
+        "button_delete": "Delete",
+        "button_post": "Post"
+    },
+    "nav": {
+        "home": "Home",
+        "dashboard": "Dashboard",
+        "admin": "Admin"
+    },
+    "aboutMeCard": {
+        "name": "Name",
+        "birthdate": "Birthdate",
+        "nationality": "Nationality",
+        "occupation": "Occupation",
+        "company": "Company",
+        "github": "Link"
+    }
+}

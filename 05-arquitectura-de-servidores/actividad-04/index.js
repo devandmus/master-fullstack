@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 // Error manager
 app.use((error, req, res, next) => {
   const status = error.status || 500;
-  error = status >= 500 ? { error: 'Error de servidor' } : error;
+  error = status >= 500 ? { error: 'Error de servidor', raw: error } : error;
   return res
     .status(status)
     .json(error)

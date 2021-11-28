@@ -175,7 +175,7 @@
 	"variable": [
 		{
 			"key": "api",
-			"value": "http://localhost:8000/api"
+			"value": "https://arquitectura-actividad04.herokuapp.com/api"
 		},
 		{
 			"key": "validRequestId",
