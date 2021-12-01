@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: docker_mysql
+    volumes:
+      - ./db:/db
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass
+    ports:
+      - 3306:3306

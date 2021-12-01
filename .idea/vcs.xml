@@ -7,5 +7,6 @@
     <mapping directory="$PROJECT_DIR$/02-metodologia-gestion-proyectos/actividad-01" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/03-metodologia-gestion-proyectos/actividad-01" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/05-arquitectura-de-servidores/actividad-04" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/51-proyecto-web/actividad-02/backend" vcs="Git" />
   </component>
 </project>
