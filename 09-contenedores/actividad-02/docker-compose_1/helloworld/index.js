@@ -18,7 +18,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  const name = 'Andrés Maldonado';
+  const name = 'From My Computer';
   res.send(`Hello ${name}!`);
 });
 

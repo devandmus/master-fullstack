@@ -1,0 +1,42 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: postgresdb
+      POSTGRES_USER: postgresuser
+      POSTGRES_PASSWORD: postgrespassword
+    volumes:
+      - drupal-db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - drupal-network
+
+  drupal:
+    image: drupal
+    restart: always
+    ports:
+      - 32400:80
+    volumes:
+      - drupal-modules:/var/www/html/modules
+      - drupal-profiles:/var/www/html/profiles
+      - drupal-sites:/var/www/html/sites
+      - drupal-themes:/var/www/html/themes
+    depends_on:
+      - postgres
+    networks:
+      - drupal-network
+
+volumes:
+  drupal-db:
+  drupal-modules:
+  drupal-profiles:
+  drupal-sites:
+  drupal-themes:
+
+networks:
+  drupal-network:
+    driver: bridge

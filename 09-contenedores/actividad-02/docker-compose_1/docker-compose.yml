@@ -1,0 +1,34 @@
+version: "3.9"
+
+#######################
+# CON BUILD DE IMAGEN #
+#######################
+
+#services:
+#  custom_node:
+#    build: .
+#    container_name: only_docker_compose_container
+#    volumes:
+#      - ./helloworld/package.json:/helloworld/package.json
+#      - ./helloworld/index.js:/helloworld/index.js
+#    ports:
+#      - 8080:8080
+
+#############################################
+# CON EL PROPIO DOCKER COMPOSE CONSTRUYENDO #
+#############################################
+
+services:
+  custom_node:
+    image: alpine:3.15
+    container_name: only_docker_compose_container
+    volumes:
+      - ./helloworld/package.json:/helloworld/package.json
+      - ./helloworld/index.js:/helloworld/index.js
+    ports:
+      - 8080:8080
+    command: sh -c "
+      apk add --update nodejs npm
+      && npm i --prefix /helloworld
+      && npm start --prefix /helloworld
+      "
